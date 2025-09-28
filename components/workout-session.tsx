@@ -14,14 +14,22 @@ import { exerciseData } from "@/lib/exercise-data"
 
 interface WorkoutSessionProps {
   onExit: () => void
+  startingPhase?: 1 | 2 | 3
 }
 
-export function WorkoutSession({ onExit }: WorkoutSessionProps) {
-  const [currentPhase, setCurrentPhase] = useState<1 | 2 | 3>(1)
+export function WorkoutSession({ onExit, startingPhase = 1 }: WorkoutSessionProps) {
+  const [currentPhase, setCurrentPhase] = useState<1 | 2 | 3>(startingPhase)
   const [currentExercise, setCurrentExercise] = useState(0)
   const [selectedLevel, setSelectedLevel] = useState<1 | 2 | 3 | null>(null)
   const [isActive, setIsActive] = useState(false)
   const [showTransition, setShowTransition] = useState(false)
+
+  useEffect(() => {
+    if (startingPhase > 1) {
+      setShowTransition(true)
+      setTimeout(() => setShowTransition(false), 2000)
+    }
+  }, [startingPhase])
 
   const phases = exerciseData
   const currentPhaseData = phases[currentPhase - 1]
@@ -36,7 +44,6 @@ export function WorkoutSession({ onExit }: WorkoutSessionProps) {
 
   const currentExerciseData = getExerciseData()
 
-  // Handle level selection for Teil 2
   useEffect(() => {
     if (currentPhase === 2 && selectedLevel === null) {
       setIsActive(false)
@@ -56,7 +63,6 @@ export function WorkoutSession({ onExit }: WorkoutSessionProps) {
       setShowTransition(true)
       setTimeout(() => setShowTransition(false), 3000)
     } else {
-      // Workout complete
       onExit()
     }
   }
@@ -83,9 +89,7 @@ export function WorkoutSession({ onExit }: WorkoutSessionProps) {
       <div className="min-h-screen bg-background flex items-center justify-center">
         <Card className="w-full max-w-md text-center">
           <CardContent className="pt-6">
-            <div className="text-6xl font-bold text-primary mb-4">
-              {currentPhase === 2 ? "TEIL 2" : currentPhase === 3 ? "TEIL 3" : "NEXT"}
-            </div>
+            <div className="text-6xl font-bold text-primary mb-4">TEIL {currentPhase}</div>
             <h2 className="text-2xl font-semibold mb-2">{currentPhaseData.title}</h2>
             <p className="text-muted-foreground">{currentPhaseData.description}</p>
           </CardContent>
@@ -96,7 +100,6 @@ export function WorkoutSession({ onExit }: WorkoutSessionProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
       <header className="border-b border-border bg-card sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -120,18 +123,15 @@ export function WorkoutSession({ onExit }: WorkoutSessionProps) {
         </div>
       </header>
 
-      {/* Level Selector for Teil 2 */}
       {currentPhase === 2 && selectedLevel === null && (
         <div className="container mx-auto px-4 py-8">
           <LevelSelector onLevelSelect={setSelectedLevel} />
         </div>
       )}
 
-      {/* Exercise Content */}
       {(currentPhase !== 2 || selectedLevel !== null) && (
         <main className="container mx-auto px-4 py-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Exercise Details */}
             <div className="lg:col-span-2 space-y-6">
               {(() => {
                 const videoKey =
@@ -186,7 +186,6 @@ export function WorkoutSession({ onExit }: WorkoutSessionProps) {
               </Card>
             </div>
 
-            {/* Timer/Counter Controls */}
             <div className="space-y-4">
               {currentExerciseData.duration ? (
                 <Timer
@@ -203,7 +202,6 @@ export function WorkoutSession({ onExit }: WorkoutSessionProps) {
                 />
               )}
 
-              {/* Control Buttons */}
               <div className="space-y-2">
                 <Button
                   onClick={() => setIsActive(!isActive)}
@@ -241,7 +239,6 @@ export function WorkoutSession({ onExit }: WorkoutSessionProps) {
                 </div>
               </div>
 
-              {/* Exercise Info */}
               <Card>
                 <CardContent className="pt-4">
                   <div className="space-y-2 text-sm">

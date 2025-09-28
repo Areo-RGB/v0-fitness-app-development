@@ -4,14 +4,20 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Play, Clock, Target, Users, AlertTriangle } from "lucide-react"
+import { Play, Clock, Target, Users, AlertTriangle, ArrowRight } from "lucide-react"
 import { WorkoutSession } from "@/components/workout-session"
 
 export default function HomePage() {
   const [isStarted, setIsStarted] = useState(false)
+  const [startingPhase, setStartingPhase] = useState<1 | 2 | 3>(1)
 
   if (isStarted) {
-    return <WorkoutSession onExit={() => setIsStarted(false)} />
+    return <WorkoutSession onExit={() => setIsStarted(false)} startingPhase={startingPhase} />
+  }
+
+  const handlePhaseClick = (phase: 1 | 2 | 3) => {
+    setStartingPhase(phase)
+    setIsStarted(true)
   }
 
   return (
@@ -69,7 +75,10 @@ export default function HomePage() {
               </div>
 
               <Button
-                onClick={() => setIsStarted(true)}
+                onClick={() => {
+                  setStartingPhase(1)
+                  setIsStarted(true)
+                }}
                 size="lg"
                 className="w-full md:w-auto text-lg px-8 py-6 pulse-glow"
               >
@@ -81,11 +90,24 @@ export default function HomePage() {
         </div>
 
         {/* Program Phases */}
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold mb-4">Training Phases</h2>
+          <p className="text-muted-foreground mb-6">Click any phase to jump directly to that section</p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card className="border-primary/20">
+          <Card
+            className="border-primary/20 cursor-pointer transition-all duration-200 hover:border-primary/40 hover:shadow-lg hover:scale-[1.02]"
+            onClick={() => handlePhaseClick(1)}
+          >
             <CardHeader>
-              <CardTitle className="text-primary">Teil 1: Running</CardTitle>
-              <CardDescription>Dynamic warm-up and mobility</CardDescription>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle className="text-primary">Teil 1: Running</CardTitle>
+                  <CardDescription>Dynamic warm-up and mobility</CardDescription>
+                </div>
+                <ArrowRight className="h-5 w-5 text-primary opacity-60" />
+              </div>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
@@ -105,10 +127,18 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card className="border-primary/20">
+          <Card
+            className="border-primary/20 cursor-pointer transition-all duration-200 hover:border-primary/40 hover:shadow-lg hover:scale-[1.02]"
+            onClick={() => handlePhaseClick(2)}
+          >
             <CardHeader>
-              <CardTitle className="text-primary">Teil 2: Strength</CardTitle>
-              <CardDescription>Core stability and balance</CardDescription>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle className="text-primary">Teil 2: Strength</CardTitle>
+                  <CardDescription>Core stability and balance</CardDescription>
+                </div>
+                <ArrowRight className="h-5 w-5 text-primary opacity-60" />
+              </div>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
@@ -128,10 +158,18 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card className="border-primary/20">
+          <Card
+            className="border-primary/20 cursor-pointer transition-all duration-200 hover:border-primary/40 hover:shadow-lg hover:scale-[1.02]"
+            onClick={() => handlePhaseClick(3)}
+          >
             <CardHeader>
-              <CardTitle className="text-primary">Teil 3: Running</CardTitle>
-              <CardDescription>High-intensity drills</CardDescription>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle className="text-primary">Teil 3: Running</CardTitle>
+                  <CardDescription>High-intensity drills</CardDescription>
+                </div>
+                <ArrowRight className="h-5 w-5 text-primary opacity-60" />
+              </div>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
