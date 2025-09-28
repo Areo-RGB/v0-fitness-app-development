@@ -9,6 +9,7 @@ import { ArrowLeft, Play, Pause, SkipForward, RotateCcw, AlertTriangle, Users } 
 import { LevelSelector } from "@/components/level-selector"
 import { Timer } from "@/components/timer"
 import { RepCounter } from "@/components/rep-counter"
+import { ExerciseVideo } from "@/components/exercise-video"
 import { exerciseData } from "@/lib/exercise-data"
 
 interface WorkoutSessionProps {
@@ -131,7 +132,21 @@ export function WorkoutSession({ onExit }: WorkoutSessionProps) {
         <main className="container mx-auto px-4 py-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Exercise Details */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 space-y-6">
+              {(() => {
+                const videoKey =
+                  currentPhase === 2 && selectedLevel && currentExerciseData.videoKey
+                    ? currentExerciseData.videoKey
+                    : exercise.videoKey
+
+                if (videoKey) {
+                  return (
+                    <ExerciseVideo videoKey={videoKey} title={`${exercise.germanName} - ${exercise.englishName}`} />
+                  )
+                }
+                return null
+              })()}
+
               <Card>
                 <CardHeader>
                   <div className="flex items-start justify-between">

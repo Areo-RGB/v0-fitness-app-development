@@ -8,12 +8,14 @@ export interface Exercise {
   sets?: number
   focusPoints?: string[]
   requiresPartner?: boolean
+  videoKey?: string
   levels?: {
     description: string
     reps?: number
     duration?: number
     sets?: number
     focusPoints?: string[]
+    videoKey?: string
   }[]
 }
 
@@ -41,6 +43,7 @@ export const exerciseData: Phase[] = [
         reps: 2,
         sets: 1,
         focusPoints: ["Start slow and gradually increase pace", "Maintain proper running form"],
+        videoKey: "LAUFEN_GERADEAUS",
       },
       {
         id: 2,
@@ -51,6 +54,7 @@ export const exerciseData: Phase[] = [
         reps: 2,
         sets: 1,
         focusPoints: ["Control the hip rotation movement", "Maintain balance throughout"],
+        videoKey: "LAUFEN_HUEFTDREHUNG_NACH_AUSSEN",
       },
       {
         id: 3,
@@ -61,6 +65,7 @@ export const exerciseData: Phase[] = [
         reps: 2,
         sets: 1,
         focusPoints: ["Control the hip rotation movement", "Maintain balance throughout"],
+        videoKey: "LAUFEN_HUEFTDREHUNG_NACH_INNEN",
       },
       {
         id: 4,
@@ -72,6 +77,7 @@ export const exerciseData: Phase[] = [
         sets: 1,
         requiresPartner: true,
         focusPoints: ["Body weight on the forefoot", "Hips and knees slightly bent", "Maintain low center of gravity"],
+        videoKey: "LAUFEN_SEITGALOPP",
       },
       {
         id: 5,
@@ -87,6 +93,7 @@ export const exerciseData: Phase[] = [
           "Knees must NOT buckle inward",
           "Jump and land simultaneously with partner",
         ],
+        videoKey: "LAUFEN_SCHULTERKONTAKT",
       },
       {
         id: 6,
@@ -97,6 +104,7 @@ export const exerciseData: Phase[] = [
         reps: 2,
         sets: 1,
         focusPoints: ["Use small, quick steps", "Maintain slight bend in hips and knees when running backward"],
+        videoKey: "LAUFEN_VOR_UND_ZURUECK_SPRINTEN",
       },
     ],
   },
@@ -117,17 +125,20 @@ export const exerciseData: Phase[] = [
             description: "Standard forearm plank hold",
             duration: 25,
             sets: 3,
+            videoKey: "UNTERARMSTUETZ_LEVEL_1_STATISCH_HALTEN",
           },
           {
             description: "Standard plank position. Alternately lift each leg for approx. 2 seconds. Keep hips stable.",
             duration: 50,
             sets: 3,
+            videoKey: "UNTERARMSTUETZ_LEVEL_2_BEINE_ABWECHSELND_ANHEBEN",
           },
           {
             description: "Standard plank position. Lift one leg approx. 10-15 cm off the floor.",
             duration: 25,
             sets: 3,
             focusPoints: ["Do not let the opposite hip tilt downward", "Perform on each leg"],
+            videoKey: "UNTERARMSTUETZ_LEVEL_3_EINBEINIGES_HALTEN",
           },
         ],
       },
@@ -144,6 +155,7 @@ export const exerciseData: Phase[] = [
             duration: 25,
             sets: 3,
             focusPoints: ["Perform on each side"],
+            videoKey: "SEITLICHER_UNTERARMSTUETZ_LEVEL_1_STATISCH_HALTEN",
           },
           {
             description:
@@ -151,12 +163,14 @@ export const exerciseData: Phase[] = [
             duration: 25,
             sets: 3,
             focusPoints: ["Perform on each side", "Maintain straight line from shoulder to foot"],
+            videoKey: "SEITLICHER_UNTERARMSTUETZ_LEVEL_2_HUEFTE_HEBEN_UND_SENKEN",
           },
           {
             description: "Side plank on forearm, both legs straight. Slowly raise and lower the upper leg.",
             duration: 25,
             sets: 3,
             focusPoints: ["Perform on each side", "Control the leg movement"],
+            videoKey: "SEITLICHER_UNTERARMSTUETZ_LEVEL_3_MIT_BEINHEBEN",
           },
         ],
       },
@@ -177,16 +191,19 @@ export const exerciseData: Phase[] = [
             description: "Beginner level Nordic hamstring curls",
             reps: 5,
             sets: 1,
+            videoKey: "OBERSCHENKELRUECKSEITE_LEVEL_1",
           },
           {
             description: "Intermediate level Nordic hamstring curls",
             reps: 8,
             sets: 1,
+            videoKey: "OBERSCHENKELRUECKSEITE_LEVEL_2",
           },
           {
             description: "Advanced level Nordic hamstring curls",
             reps: 13,
             sets: 1,
+            videoKey: "OBERSCHENKELRUECKSEITE_LEVEL_3",
           },
         ],
       },
@@ -203,6 +220,7 @@ export const exerciseData: Phase[] = [
             duration: 30,
             sets: 2,
             focusPoints: ["Perform on each leg", "Weight on the forefoot", "Knee must NOT buckle inward"],
+            videoKey: "EINBEINSTAND_LEVEL_1_BALL_HALTEN",
           },
           {
             description:
@@ -211,6 +229,7 @@ export const exerciseData: Phase[] = [
             sets: 2,
             requiresPartner: true,
             focusPoints: ["Perform on each leg", "Abs tight", "Knee only slightly bent, must NOT buckle inward"],
+            videoKey: "EINBEINSTAND_LEVEL_2_BALL_MIT_PARTNER_WERFEN",
           },
           {
             description:
@@ -219,6 +238,7 @@ export const exerciseData: Phase[] = [
             sets: 2,
             requiresPartner: true,
             focusPoints: ["Perform on each leg", "Knee must NOT buckle inward"],
+            videoKey: "EINBEINSTAND_LEVEL_3_PARTNER_TESTEN",
           },
         ],
       },
@@ -235,6 +255,7 @@ export const exerciseData: Phase[] = [
             duration: 30,
             sets: 2,
             focusPoints: ["Knees must NOT buckle inward", "Control the movement"],
+            videoKey: "KNIEBEUGEN_LEVEL_1_MIT_ZEHENHEBEN",
           },
           {
             description:
@@ -242,6 +263,7 @@ export const exerciseData: Phase[] = [
             reps: 2,
             sets: 1,
             focusPoints: ["Knees must NOT buckle inward", "Torso/hips must not tilt sideways"],
+            videoKey: "KNIEBEUGEN_LEVEL_2_AUSFALLSCHRITTE_IM_GEHEN",
           },
           {
             description:
@@ -249,6 +271,7 @@ export const exerciseData: Phase[] = [
             reps: 10,
             sets: 2,
             focusPoints: ["Perform on each leg", "Torso and hip must not tilt sideways"],
+            videoKey: "KNIEBEUGEN_LEVEL_3_EINBEINIGE_KNIEBEUGEN",
           },
         ],
       },
@@ -265,6 +288,7 @@ export const exerciseData: Phase[] = [
             duration: 30,
             sets: 2,
             focusPoints: ["Knees must NOT buckle inward", "Land softly on forefoot"],
+            videoKey: "SPRINGEN_LEVEL_1_VERTIKALE_SPRUENGE",
           },
           {
             description:
@@ -272,6 +296,7 @@ export const exerciseData: Phase[] = [
             duration: 30,
             sets: 2,
             focusPoints: ["Knees must NOT buckle inward", "Land softly on forefoot"],
+            videoKey: "SPRINGEN_LEVEL_2_SEITLICHE_SPRUENGE",
           },
           {
             description:
@@ -279,6 +304,7 @@ export const exerciseData: Phase[] = [
             duration: 30,
             sets: 2,
             focusPoints: ["Knees must NOT buckle inward", "Land softly on forefoot", "Jump quickly and explosively"],
+            videoKey: "SPRINGEN_LEVEL_3_KASTENSPRUENGE",
           },
         ],
       },
@@ -298,6 +324,7 @@ export const exerciseData: Phase[] = [
         reps: 2,
         sets: 1,
         focusPoints: ["Target speed: 75-80% of maximal speed", "Maintain good running form"],
+        videoKey: "LAUFEN_UEBER_DAS_SPIELFELD",
       },
       {
         id: 14,
@@ -312,6 +339,7 @@ export const exerciseData: Phase[] = [
           "Land softly on forefoot",
           "Bring knee high with opposing arm forward",
         ],
+        videoKey: "LAUFEN_HOCH_WEIT_SPRUENGE",
       },
       {
         id: 15,
@@ -322,6 +350,7 @@ export const exerciseData: Phase[] = [
         reps: 2,
         sets: 1,
         focusPoints: ["Knees must NOT buckle inward", "Plant and cut with control", "Sprint at 80-90% max speed"],
+        videoKey: "LAUFEN_RICHTUNGSWECHSEL",
       },
     ],
   },
