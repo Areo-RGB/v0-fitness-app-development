@@ -355,3 +355,275 @@ export const exerciseData: Phase[] = [
     ],
   },
 ]
+
+export const stretchRoutineData: Phase[] = [
+  {
+    id: 4,
+    title: "Flexibility & Mobility Routine",
+    description: "Complete stretching routine for improved flexibility and recovery",
+    totalDuration: 690, // 23 exercises × 30 seconds each
+    exercises: [
+      {
+        id: 101,
+        germanName: "CHILD'S POSE",
+        englishName: "Child's Pose",
+        description:
+          "Kneel on the floor, touch your big toes together and sit back on your heels. Separate your knees about hip-width apart. Fold forward, extending your arms in front of you and resting your forehead on the ground.",
+        duration: 30,
+        sets: 1,
+        focusPoints: [
+          "Breathe deeply and relax into the stretch",
+          "Keep your arms extended and forehead down",
+          "Feel the stretch in your back and shoulders",
+        ],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759149953/Stretch/c8sdairlonfzjadqigxx.mp4",
+      },
+      {
+        id: 102,
+        germanName: "SEAL STRETCH",
+        englishName: "Seal Stretch",
+        description:
+          "Lie on your stomach and push up with your arms, keeping your hips on the ground. Look up and arch your back gently.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep hips pressed to the ground", "Gentle arch in the back", "Look up to increase the stretch"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759149966/Stretch/uxhe1xszon7hj0bvt8fu.mp4",
+      },
+      {
+        id: 103,
+        germanName: "CHILD'S POSE WITH LEFT TWIST",
+        englishName: "Child's Pose with Left Twist",
+        description:
+          "From child's pose, walk your hands to the left side, feeling a stretch along your right side body.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep hips centered", "Feel the stretch along your side", "Breathe deeply"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759149984/Stretch/mxwjhekkolbhkq2ab9lb.mp4",
+      },
+      {
+        id: 104,
+        germanName: "CHILD'S POSE WITH RIGHT TWIST",
+        englishName: "Child's Pose with Right Twist",
+        description:
+          "From child's pose, walk your hands to the right side, feeling a stretch along your left side body.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep hips centered", "Feel the stretch along your side", "Breathe deeply"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759149992/Stretch/sjnltvrcmjbvggzsg39v.mp4",
+      },
+      {
+        id: 105,
+        germanName: "SEAL STRETCH",
+        englishName: "Seal Stretch",
+        description:
+          "Lie on your stomach and push up with your arms, keeping your hips on the ground. Look up and arch your back gently.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep hips pressed to the ground", "Gentle arch in the back", "Look up to increase the stretch"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150000/Stretch/tzsmzaacsnqhdbecbafu.mp4",
+      },
+      {
+        id: 106,
+        germanName: "PIGEON STRETCH - RIGHT",
+        englishName: "Pigeon Stretch - Right",
+        description:
+          "Bring your right knee forward and place it behind your right wrist. Extend your left leg straight back. Lower down onto your forearms.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep hips square", "Feel the stretch in your hip flexor", "Breathe deeply and relax"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150023/Stretch/pxmkaqjwv9lapfxnzytm.mp4",
+      },
+      {
+        id: 107,
+        germanName: "PIGEON STRETCH - LEFT",
+        englishName: "Pigeon Stretch - Left",
+        description:
+          "Bring your left knee forward and place it behind your left wrist. Extend your right leg straight back. Lower down onto your forearms.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep hips square", "Feel the stretch in your hip flexor", "Breathe deeply and relax"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150031/Stretch/tnbagur2qgku8s1pfmj5.mp4",
+      },
+      {
+        id: 108,
+        germanName: "COUCH STRETCH - LEFT",
+        englishName: "Couch Stretch - Left",
+        description:
+          "Place your left foot on a couch or wall behind you. Step your right foot forward into a lunge position. Keep your torso upright.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep torso upright", "Feel the stretch in your hip flexor", "Don't let your knee cave inward"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150040/Stretch/vfvcprwv6bgtd77qkq8l.mp4",
+      },
+      {
+        id: 109,
+        germanName: "COUCH STRETCH - RIGHT",
+        englishName: "Couch Stretch - Right",
+        description:
+          "Place your right foot on a couch or wall behind you. Step your left foot forward into a lunge position. Keep your torso upright.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep torso upright", "Feel the stretch in your hip flexor", "Don't let your knee cave inward"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150058/Stretch/sueemxy0gdngkdvypi6v.mp4",
+      },
+      {
+        id: 110,
+        germanName: "CRISS CROSS AND REACH",
+        englishName: "Criss Cross and Reach",
+        description: "Sit with legs crossed and reach forward with both arms, feeling a stretch in your back and hips.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Reach forward with control", "Feel the stretch in your back", "Keep breathing steady"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150094/Stretch/qa5ol9lzuudgugyvvcqh.mp4",
+      },
+      {
+        id: 111,
+        germanName: "CRISS CROSS AND REACH - OPPOSITE",
+        englishName: "Criss Cross and Reach - Opposite",
+        description:
+          "Sit with legs crossed in the opposite direction and reach forward with both arms, feeling a stretch in your back and hips.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Reach forward with control", "Feel the stretch in your back", "Keep breathing steady"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150104/Stretch/vfv2iygnbpubiwhpcqac.mp4",
+      },
+      {
+        id: 112,
+        germanName: "FROG STRETCH",
+        englishName: "Frog Stretch",
+        description:
+          "Get on your hands and knees, then spread your knees wide apart. Lower down onto your forearms and feel the stretch in your inner thighs.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep knees wide", "Feel the stretch in your inner thighs", "Breathe deeply"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150116/Stretch/dswadlxgv1hgz0ijn6rx.mp4",
+      },
+      {
+        id: 113,
+        germanName: "QUAD STRETCH - LEFT",
+        englishName: "Quad Stretch - Left",
+        description:
+          "Lying on your side, grab your left ankle and pull your heel toward your glutes. Feel the stretch in the front of your thigh.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Pull heel toward glutes", "Feel the stretch in your quadriceps", "Keep hips aligned"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150124/Stretch/akrz8xdo0wnhka2sxxa3.mp4",
+      },
+      {
+        id: 114,
+        germanName: "QUAD STRETCH - RIGHT",
+        englishName: "Quad Stretch - Right",
+        description:
+          "Lying on your side, grab your right ankle and pull your heel toward your glutes. Feel the stretch in the front of your thigh.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Pull heel toward glutes", "Feel the stretch in your quadriceps", "Keep hips aligned"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150141/Stretch/mmktj5feewzhqhb9kgom.mp4",
+      },
+      {
+        id: 115,
+        germanName: "SEATED HAMSTRING",
+        englishName: "Seated Hamstring",
+        description:
+          "Sit with one leg extended and the other bent. Reach forward toward your extended foot, feeling a stretch in your hamstring.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep your back straight", "Reach toward your toes", "Feel the stretch in your hamstring"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150163/Stretch/ycwxu1tsqirgqxqzsnrh.mp4",
+      },
+      {
+        id: 116,
+        germanName: "WIDE LEG HAMSTRING WITH LEFT TWIST",
+        englishName: "Wide Leg Hamstring with Left Twist",
+        description:
+          "Sit with legs wide apart. Reach toward your left foot with both hands, adding a twist to target different muscle groups.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep legs wide", "Reach toward your foot", "Feel the stretch and twist"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150188/Stretch/w3qvvyeqdaun97bvrir6.mp4",
+      },
+      {
+        id: 117,
+        germanName: "WIDE LEG HAMSTRING WITH RIGHT TWIST",
+        englishName: "Wide Leg Hamstring with Right Twist",
+        description:
+          "Sit with legs wide apart. Reach toward your right foot with both hands, adding a twist to target different muscle groups.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Keep legs wide", "Reach toward your foot", "Feel the stretch and twist"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150211/Stretch/vexzrfsx2sdqj1szqe7i.mp4",
+      },
+      {
+        id: 118,
+        germanName: "SIT BACK ON HEELS",
+        englishName: "Sit Back on Heels",
+        description: "Kneel and sit back on your heels. Feel the stretch in your shins and the tops of your feet.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Sit back comfortably", "Feel the stretch in your shins", "Breathe deeply"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150230/Stretch/oos8vrhnfts36rj5tsyu.mp4",
+      },
+      {
+        id: 119,
+        germanName: "DOWNWARD DOG",
+        englishName: "Downward Dog",
+        description:
+          "Start on hands and knees, then lift your hips up and back. Straighten your legs and arms to form an inverted V shape.",
+        duration: 30,
+        sets: 1,
+        focusPoints: [
+          "Press hands firmly into ground",
+          "Lift hips up and back",
+          "Feel the stretch in your calves and hamstrings",
+        ],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150247/Stretch/cuzl4sbbedgtequ2so7t.mp4",
+      },
+      {
+        id: 120,
+        germanName: "SIT BACK ON HEELS WITH KNEE RAISE",
+        englishName: "Sit Back on Heels with Knee Raise",
+        description:
+          "Sit back on your heels, then lift one knee up while keeping the other foot tucked under. Alternate between sides.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Alternate knee raises", "Keep one foot tucked", "Feel the stretch in your shins and ankles"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150262/Stretch/usqgj1dclmg3ikqyaqzj.mp4",
+      },
+      {
+        id: 121,
+        germanName: "CALF STRETCH - LEFT",
+        englishName: "Calf Stretch - Left",
+        description:
+          "Step your left foot back and press your heel into the ground. Keep your leg straight and lean forward to stretch your calf.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Press heel into ground", "Keep back leg straight", "Feel the stretch in your calf"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150278/Stretch/mt8pfl6f8zcikuzb8xu8.mp4",
+      },
+      {
+        id: 122,
+        germanName: "CALF STRETCH - RIGHT",
+        englishName: "Calf Stretch - Right",
+        description:
+          "Step your right foot back and press your heel into the ground. Keep your leg straight and lean forward to stretch your calf.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Press heel into ground", "Keep back leg straight", "Feel the stretch in your calf"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150294/Stretch/zieosofbwqvbis1kznui.mp4",
+      },
+      {
+        id: 123,
+        germanName: "SIT BACK ON TOES",
+        englishName: "Sit Back on Toes",
+        description:
+          "Kneel with your toes tucked under and sit back on your heels. Feel the stretch in the bottoms of your feet.",
+        duration: 30,
+        sets: 1,
+        focusPoints: ["Tuck toes under", "Sit back gently", "Feel the stretch in your feet"],
+        videoKey: "https://res.cloudinary.com/dwedvwkzw/video/upload/v1759150312/Stretch/srih8vxkveajgwzh4g3r.mp4",
+      },
+    ],
+  },
+]
+
+export const allExerciseData = [...exerciseData, ...stretchRoutineData]

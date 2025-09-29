@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Play, Clock, Target, Users, AlertTriangle, ArrowRight, Dumbbell, Zap } from "lucide-react"
 import { WorkoutSession } from "@/components/workout-session"
-import { StretchRoutine } from "@/components/stretch-routine"
 
 type TrainingProgram = "fifa" | "stretch" | null
 
@@ -15,11 +14,11 @@ export default function HomePage() {
   const [startingPhase, setStartingPhase] = useState<1 | 2 | 3>(1)
 
   if (activeProgram === "fifa") {
-    return <WorkoutSession onExit={() => setActiveProgram(null)} startingPhase={startingPhase} />
+    return <WorkoutSession onExit={() => setActiveProgram(null)} startingPhase={startingPhase} programType="fifa" />
   }
 
   if (activeProgram === "stretch") {
-    return <StretchRoutine onExit={() => setActiveProgram(null)} />
+    return <WorkoutSession onExit={() => setActiveProgram(null)} programType="stretch" />
   }
 
   const handlePhaseClick = (phase: 1 | 2 | 3) => {

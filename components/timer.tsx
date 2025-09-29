@@ -11,9 +11,10 @@ interface TimerProps {
   isActive: boolean
   onComplete: () => void
   sets?: number
+  exerciseName?: string // Added exercise name prop for mobile display
 }
 
-export function Timer({ duration, isActive, onComplete, sets = 1 }: TimerProps) {
+export function Timer({ duration, isActive, onComplete, sets = 1, exerciseName }: TimerProps) {
   const [timeLeft, setTimeLeft] = useState(duration)
   const [currentSet, setCurrentSet] = useState(1)
   const [isResting, setIsResting] = useState(false)
@@ -64,32 +65,37 @@ export function Timer({ duration, isActive, onComplete, sets = 1 }: TimerProps) 
     : ((duration - timeLeft) / duration) * 100
 
   return (
-    <Card className="text-center">
-      <CardHeader>
-        <CardTitle className="flex items-center justify-center gap-2">
-          <Clock className="h-5 w-5" />
+    <Card className="text-center bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
+      <CardHeader className="pb-2 sm:pb-4">
+        <CardTitle className="flex items-center justify-center gap-2 text-sm sm:text-base">
+          <Clock className="h-4 w-4 sm:h-5 sm:w-5" />
           Timer
         </CardTitle>
+        {exerciseName && (
+          <p className="text-xs sm:text-sm text-muted-foreground font-medium truncate">{exerciseName}</p>
+        )}
       </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
-          <div className={`text-6xl font-bold countdown-pulse ${isResting ? "text-yellow-400" : "text-primary"}`}>
-            {formatTime(timeLeft)}
-          </div>
-
-          <Progress value={progress} className="h-2" />
-
-          <div className="flex justify-between items-center">
-            <Badge variant={isResting ? "destructive" : "default"}>{isResting ? "Rest" : "Exercise"}</Badge>
-            {sets > 1 && (
-              <Badge variant="outline">
-                Set {currentSet} of {sets}
-              </Badge>
-            )}
-          </div>
-
-          {isResting && <p className="text-sm text-muted-foreground">Prepare for next set...</p>}
+      <CardContent className="space-y-3 sm:space-y-4">
+        <div
+          className={`text-4xl sm:text-6xl lg:text-7xl font-bold countdown-pulse ${isResting ? "text-yellow-400" : "text-primary"}`}
+        >
+          {formatTime(timeLeft)}
         </div>
+
+        <Progress value={progress} className="h-2 sm:h-3" />
+
+        <div className="flex justify-center items-center gap-2 sm:gap-4 flex-wrap">
+          <Badge variant={isResting ? "destructive" : "default"} className="text-xs sm:text-sm">
+            {isResting ? "Rest" : "Exercise"}
+          </Badge>
+          {sets > 1 && (
+            <Badge variant="outline" className="text-xs sm:text-sm">
+              Set {currentSet} of {sets}
+            </Badge>
+          )}
+        </div>
+
+        {isResting && <p className="text-xs sm:text-sm text-muted-foreground animate-pulse">Prepare for next set...</p>}
       </CardContent>
     </Card>
   )
