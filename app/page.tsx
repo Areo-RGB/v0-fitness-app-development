@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Play, Clock, Target, Users, AlertTriangle, ArrowRight, Dumbbell, Zap } from "lucide-react"
+import { Play, Clock, Target, Users, ArrowRight, Dumbbell, Zap } from "lucide-react"
 import { WorkoutSession } from "@/components/workout-session"
 
 type TrainingProgram = "fifa" | "stretch" | null
@@ -244,26 +244,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Safety Notice */}
-        <Card className="border-destructive/20 bg-destructive/5">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-destructive">
-              <AlertTriangle className="h-5 w-5" />
-              Important Safety Guidelines
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2 text-sm">
-              <li>
-                • <strong>Always warm up</strong> before starting any training program
-              </li>
-              <li>• Maintain proper form over speed or repetitions</li>
-              <li>• Stop immediately if you feel pain or discomfort</li>
-              <li>• Stay hydrated throughout your workout</li>
-              <li>• Listen to your body and rest when needed</li>
-            </ul>
-          </CardContent>
-        </Card>
       </main>
     </div>
   )
